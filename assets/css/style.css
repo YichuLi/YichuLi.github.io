@@ -524,8 +524,23 @@ main {
 .service-list {
   display: grid;
   grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(4, 1fr); */
   gap: 20px;
 }
+
+@media (min-width: 1024px) {
+  .service-list {
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat(4, 1fr); */
+    gap: 20px 25px;
+  }
+}
+  /* service
+
+  .service-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 25px;
+  } */
 
 .service-item {
   position: relative;
@@ -534,6 +549,10 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  min-width: 180px; /* Use min-width instead of width */
+  height: 100px; /* Adjust height as needed */
+  /* Removed fixed width and height to allow content to define the size */
+  box-sizing: border-box; /* Make sure padding and border are included in the width */
 }
 
 .service-item::before {
@@ -1727,13 +1746,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   /**
    * ABOUT
    */
-
-  /* service */
-
-  .service-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 25px;
-  }
 
   /* testimonials */
 
